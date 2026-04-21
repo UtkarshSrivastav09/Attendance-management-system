@@ -1,38 +1,100 @@
+# 🎓 SmartCampus: AI-Powered Face Recognition Attendance System
 
-# Face based attendance system using python and openCV
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+[![CustomTkinter](https://img.shields.io/badge/UI-CustomTkinter-blue?style=for-the-badge)](https://github.com/TomSchimansky/CustomTkinter)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
-[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/) 
+SmartCampus is a modernized, production-ready attendance management system that leverages Computer Vision and Machine Learning to automate attendance tracking. Featuring a sleek, Power BI-inspired dashboard, interactive analytics, and secure authentication, it represents a significant leap from traditional paper-based or legacy digital systems.
 
-### What steps you have to follow??
-- Download or clone my Repository to your device
-- type `pip install -r requirements.txt` in command prompt(this will install required package for project)
-- Create a `TrainingImage` folder in a project folder.
-- open `attendance.py` and `automaticAttendance.py`, change all the path accoriding to your system
-- Run `attandance.py` file
+---
 
-### Project flow & explaination
-- After you run the project you have to register your face so that system can identify you, so click on register new student
-- After you click a small window will pop up in that you have to enter you ID and name and then click on `Take Image` button
-- After clicking `Take Image` button A camera window will pop up and it will detect your Face and take upto 50 Images(you can change the number of Image it can take) and stored in the folder named `TrainingImage`. more you give the image to system, the better it will perform while recognising the face.
-- Then you have to click on `Train Image` button, It will train the model and convert all the Image into numeric format so that computer can understand. we are training the image so that next time when we will show the same face to the computer it will easily identify the face.
-- It will take some time(depends on you system).
-- After training model click on `Automatic Attendance` ,you have to enter the subject name and then it can fill attendace by your face using our trained model.
-- it will create `.csv` file for every subject you enter and seperate every `.csv` file accoriding the subject
-- You can view the attendance after clicking `View Attendance` button. It will show record in tabular format.
+## 🌟 Key Features
 
-### Screenshots
+- **🛡️ Secure Access**: Protected by an authentication gate with a professional login interface.
+- **📊 Interactive Analytics**: Real-time dashboard featuring Matplotlib-powered charts showing:
+  - 7-day attendance trends.
+  - Today's attendance rate (Present vs. Absent).
+  - Total student enrollment statistics.
+- **🖼️ Advanced Face Recognition**: Uses OpenCV's LBPH (Local Binary Patterns Histograms) for high-accuracy face identification.
+- **🎨 Premium UI/UX**: Dark-mode optimized interface built with CustomTkinter for a desktop-native feel.
+- **📝 Automated Logging**: Generates timestamped CSV reports automatically for every subject/class.
+- **🎙️ Voice Feedback**: Integrated Text-to-Speech (TTS) for user interactions and success confirmations.
+- **🧪 Dummy Data Engine**: Includes a script to generate historical data for professional demonstrations.
 
-### Simple UI
-<img src='https://github.com/Patelrahul4884/Attendance-Management-system-using-face-recognition/blob/master/Project%20Snap/1.PNG'>
+---
 
-### While taking Image
-![Screenshot (103)](https://user-images.githubusercontent.com/26384517/86820502-c7f44500-c0a6-11ea-9530-6317ec2059d9.png)
+## 🚀 Getting Started
 
-## While taking Attendance
-![Screenshot (91)](https://user-images.githubusercontent.com/26384517/86821090-9465ea80-c0a7-11ea-9680-777923663d0c.png)
+### Prerequisites
+- Python 3.8 or higher
+- A working webcam
 
-## Attendance in tabular format 
-<img src='https://github.com/Patelrahul4884/Attendance-Management-system-using-face-recognition/blob/master/Project%20Snap/7.PNG'>
+### Installation
 
-## Just follow me and Star⭐ my repository
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/UtkarshSrivastav09/Attendance_Mangement_System.git
+   cd Attendance_Mangement_System
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Required Folders**
+   The system will automatically create necessary folders (`TrainingImage`, `Attendance`, etc.) on first run, but ensure you have the `haarcascade_frontalface_default.xml` file in the root directory.
+
+---
+
+## 🛠️ Usage Guide
+
+1. **Launch the Application**
+   ```bash
+   python auth.py
+   ```
+   *The default login (if configured) will grant access to the main dashboard.*
+
+2. **Register a New Student**
+   - Navigate to **"Register Student"** in the sidebar.
+   - Enter Enrollment Number and Name.
+   - Click **"Take Image"**: Look at the camera; the system will capture 50 samples.
+   - Click **"Train Model"**: This processes the images (LBPH) to recognize the student later.
+
+3. **Take Attendance**
+   - Click **"Take Attendance"**.
+   - Select the subject/class.
+   - The camera will open. Once recognized, the system will announce your name and log your attendance.
+
+4. **View Analytics**
+   - The **Dashboard** updates in real-time with charts and a "Live Feed" table of today's logs.
+   - Use **"View Reports"** to browse historical CSV records.
+
+---
+
+## 📂 Project Structure
+
+```text
+├── Attendance/            # CSV records stored by date
+├── StudentDetails/        # Master database of registered students
+├── TrainingImage/         # Raw face images captured during registration
+├── TrainingImageLabel/    # Trained model (Trainner.yml)
+├── UI_Image/              # Assets for the GUI
+├── auth.py                # Login & Security module
+├── attendance.py          # Main Dashboard & Analytics
+├── automaticAttedance.py  # Face recognition engine
+├── generate_dummy_data.py # Demo data generator
+└── requirements.txt       # Project dependencies
+```
+
+---
+
+## 🤝 Contributing
+Contributions are welcome! If you have suggestions for new features or improvements, feel free to fork the repo and create a pull request.
+
+## ⭐ Show your support
+If you find this project useful, please consider giving it a **Star** on GitHub!
+
+---
+*Developed with ❤️ by [Utkarsh Srivastav](https://github.com/UtkarshSrivastav09)*
